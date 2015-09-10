@@ -1,4 +1,4 @@
-package com.capgemini.starterkit.stack_exchange_game;
+package com.capgemini.starterkit.stock_exchange_game;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,6 +12,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import com.capgemini.starterkit.stock_exchange_game.Action;
+import com.capgemini.starterkit.stock_exchange_game.CSVLoader;
 
 public class CSVLoaderTest {
 

@@ -3,15 +3,15 @@ package com.capgemini.starterkit.strategyImpl;
 
 import java.util.List;
 
-import com.capgemini.starterkit.stack_exchange_game.Action;
-import com.capgemini.starterkit.stack_exchange_game.Makler;
-import com.capgemini.starterkit.stack_exchange_game.OwnedAction;
+import com.capgemini.starterkit.stock_exchange_game.Action;
+import com.capgemini.starterkit.stock_exchange_game.Makler;
+import com.capgemini.starterkit.stock_exchange_game.OwnedAction;
 import com.capgemini.starterkit.strategy.AbstractStrategy;
 import com.capgemini.starterkit.strategy.Strategy;
 
 public class LessDummyStrategy extends AbstractStrategy implements Strategy {
 
-	@Override
+//	@Override
 	public void determineActionsToBuy() {
 		List<Action> currentActions = player.getCurrentActions();
 		int amountOfActionsToBuy = countProfitableActions(currentActions);
@@ -45,7 +45,7 @@ public class LessDummyStrategy extends AbstractStrategy implements Strategy {
 				maxActionsAmount > 0 ? maxActionsAmount : 0);
 	}
 
-	@Override
+//	@Override
 	public void determineActionsToSell() {
 		for (OwnedAction action : wallet.getOwnedActions()) {
 			if (action.getPurchasePrice()  < player

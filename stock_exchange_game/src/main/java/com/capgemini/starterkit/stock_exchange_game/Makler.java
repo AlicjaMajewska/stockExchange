@@ -1,4 +1,4 @@
-package com.capgemini.starterkit.stack_exchange_game;
+package com.capgemini.starterkit.stock_exchange_game;
 
 import java.util.ArrayList;
 import java.util.List;

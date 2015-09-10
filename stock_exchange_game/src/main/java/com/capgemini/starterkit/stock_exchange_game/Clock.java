@@ -1,5 +1,6 @@
-package com.capgemini.starterkit.stack_exchange_game;
+package com.capgemini.starterkit.stock_exchange_game;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +14,16 @@ public class Clock {
 		this.calendar.setTime(startDate);
 		this.endDate = endDate;
 
+	}
+	public List<Date> createListOfPreviousDates() {
+		List<Date> actionsMemoryDates = new ArrayList<Date>();
+		Calendar temporaryCalendar = Calendar.getInstance();
+		temporaryCalendar.setTime(getDate());
+		for (int i = 0; i < StockExchange.ACTIONS_MEMORY_DAYS; ++i) {
+			temporaryCalendar.roll(Calendar.DATE, false);
+			actionsMemoryDates.add(temporaryCalendar.getTime());
+		}
+		return actionsMemoryDates;
 	}
 
 	public void makeNextDay(Map<Date, List<Action>> actionsAndDateMap) {

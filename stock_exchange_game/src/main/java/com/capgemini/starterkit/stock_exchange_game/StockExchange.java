@@ -1,8 +1,7 @@
-package com.capgemini.starterkit.stack_exchange_game;
+package com.capgemini.starterkit.stock_exchange_game;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -14,7 +13,7 @@ public class StockExchange {
 	private CSVLoader loader;
 	private Clock clock;
 	private List<Makler> maklerObservers = new ArrayList<Makler>();
-	public static final int ACTIONS_MEMORY_DAYS = 10;
+	public static final int ACTIONS_MEMORY_DAYS = 14;
 
 	public StockExchange() {
 		try {
@@ -54,7 +53,7 @@ public class StockExchange {
 
 	public List<Double> getCompanyActionPricesFromLastPeriod(String companyName) {
 		List<Double> companyActionPrices = new ArrayList<Double>();
-		List<Date> listOfPreviousDates = createListOfPreviousDates();
+		List<Date> listOfPreviousDates = clock.createListOfPreviousDates();
 
 		for (Date date : listOfPreviousDates) {
 			List<Action> actionsInSpecifiedDay = actionsAndDateMap.get(date);
@@ -69,16 +68,7 @@ public class StockExchange {
 		return companyActionPrices;
 	}
 
-	public List<Date> createListOfPreviousDates() {
-		List<Date> actionsMemoryDates = new ArrayList<Date>();
-		Calendar temporaryCalendar = Calendar.getInstance();
-		temporaryCalendar.setTime(clock.getDate());
-		for (int i = 0; i < ACTIONS_MEMORY_DAYS; ++i) {
-			temporaryCalendar.roll(Calendar.DATE, false);
-			actionsMemoryDates.add(temporaryCalendar.getTime());
-		}
-		return actionsMemoryDates;
-	}
+	
 
 	public void sellActions(String companyName, int amount) {
 		// empty since we don't need to store this information to unable

@@ -1,7 +1,7 @@
 package com.capgemini.starterkit.strategy;
 
-import com.capgemini.starterkit.stack_exchange_game.Player;
-import com.capgemini.starterkit.stack_exchange_game.Wallet;
+import com.capgemini.starterkit.stock_exchange_game.Player;
+import com.capgemini.starterkit.stock_exchange_game.Wallet;
 
 public abstract class AbstractStrategy {
 	protected Player player;

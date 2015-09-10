@@ -1,14 +1,14 @@
 package com.capgemini.starterkit.strategyImpl;
 
-import com.capgemini.starterkit.stack_exchange_game.Action;
-import com.capgemini.starterkit.stack_exchange_game.Makler;
-import com.capgemini.starterkit.stack_exchange_game.OwnedAction;
+import com.capgemini.starterkit.stock_exchange_game.Action;
+import com.capgemini.starterkit.stock_exchange_game.Makler;
+import com.capgemini.starterkit.stock_exchange_game.OwnedAction;
 import com.capgemini.starterkit.strategy.AbstractStrategy;
 import com.capgemini.starterkit.strategy.Strategy;
 
 public class DummyStrategy extends AbstractStrategy implements Strategy {
 
-	@Override
+//	@Override
 	public void determineActionsToBuy() {
 		for (Action action : player.getCurrentActions()) {
 			if (action.getPrice() * (1 + Makler.COMMISION) > player
@@ -30,7 +30,7 @@ public class DummyStrategy extends AbstractStrategy implements Strategy {
 				maxActionsAmount > 0 ? maxActionsAmount : 0);
 	}
 
-	@Override
+//	@Override
 	public void determineActionsToSell() {
 		for (OwnedAction action : wallet.getOwnedActions()) {
 			if (action.getPurchasePrice() < player
